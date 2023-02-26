@@ -1,6 +1,5 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import styles from '@/styles/Charts.module.css'
 import { useState, useEffect, useRef } from "react";
 
 export default function Chart({ points }) {
@@ -35,7 +34,7 @@ export default function Chart({ points }) {
                 color: '#000000',
             },
             formatter() {
-                return `Amount <strong>$ ${this.y}</strong>`
+                return `Amount <strong>\u20B9 ${Number(this.y.toFixed(0)).toLocaleString("en-In")}</strong> <br> Year <strong> ${this.x} </strong>`
             }
         },
 
@@ -67,7 +66,7 @@ export default function Chart({ points }) {
     }, points);
 
     return (
-        <div className={styles.chart}>
+        <div style={{ margin: '4rem 1rem' }}>
             <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
     )

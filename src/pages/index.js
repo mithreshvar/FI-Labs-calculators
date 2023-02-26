@@ -41,12 +41,10 @@ export default function Home() {
   function calculateGraphPoints() {
     let points = [];
     let cumulativeAmount = parseFloat(initialAmount);
-    for (let i = 1; i <= years; i++) {
-
+    for (let i = 0; i <= years; i++) {
       points.push(cumulativeAmount);
-      cumulativeAmount += parseFloat(cumulativeAmount * CAGR / 100);
+      cumulativeAmount = cumulativeAmount + parseFloat(cumulativeAmount * CAGR / 100);
     }
-
     setGraphPoints(points);
   }
 
@@ -147,7 +145,7 @@ export default function Home() {
               </div>
 
               <div className={styles.chart}>
-                {isLineChart ? <LineChart points={graphPoints} /> : <DoughnutChart initialInvestment={initialAmount} finalInvestment={finalAmount} />}
+                {isLineChart ? <LineChart points={graphPoints} /> : <DoughnutChart initialInvestment={initialAmount} finalInvestment={finalAmount} dependency={output} />}
               </div>
 
             </div>

@@ -1,10 +1,9 @@
 import React from 'react'
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import styles from '@/styles/Charts.module.css';
 import { useState, useEffect, useRef } from "react";
 
-function DoughnutChart({ initialInvestment, finalInvestment }) {
+function DoughnutChart({ initialInvestment, finalInvestment, dependency }) {
 
   const [option, setOptions] = useState({
     chart: {
@@ -20,6 +19,9 @@ function DoughnutChart({ initialInvestment, finalInvestment }) {
     plotOptions: {
       pie: {
         innerSize: '50%',
+        dataLabels: {
+          enabled: false,
+        }
       }
     },
     tooltip: {
@@ -30,7 +32,10 @@ function DoughnutChart({ initialInvestment, finalInvestment }) {
         color: '#000000',
       },
       formatter() {
-        return `${this.key} <strong>$ ${this.y}</strong>`
+        return `${this.key} <strong>\u20B9 ${this.y.toLocaleString("en-In")}</strong>`
+      },
+      labels: {
+        enabled: false,
       }
     },
     series: [{
@@ -63,10 +68,10 @@ function DoughnutChart({ initialInvestment, finalInvestment }) {
         }],
       })
     })
-  }, [initialInvestment, finalInvestment])
+  }, [dependency])
 
   return (
-    <div className={styles.chart}>
+    <div style={{ margin: '4rem 1rem' }}>
       <HighchartsReact highcharts={Highcharts} options={option} />
     </div>
   )

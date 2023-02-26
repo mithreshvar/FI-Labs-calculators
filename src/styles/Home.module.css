@@ -133,50 +133,54 @@
 }
 
 
-.toggle {
-  margin-top: 0.2rem;
-  position: absolute;
-  z-index: 1;
-  display: block;
-  width: 4rem;
-  height: 2rem;
-  border-radius: 50px;
-  outline: none;
-  border: 3px solid rgba(255, 255, 255, 1);
-  background-color: #00000029;
-  box-shadow: 0px 3px 5px #505C6227;
-  box-shadow: inset 0px 4px 5px 1px #69757b27;
-}
-
 .chartContainer {
   height: 100%;
+  padding: 0.2rem;
+}
 
+.toggle {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0rem 0.1rem;
+  width: 3.813rem;
+  height: 2.063rem;
+  padding: 0.2rem;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  background-color: #505C6227;
+  box-shadow: 0px 3px 5px #505C6227;
+  opacity: 1;
+  backdrop-filter: blur(30px);
+  align-items: center;
 }
 
 .icon1 {
-  margin-top: 0.15rem;
-  margin-left: 0.2rem;
-  margin-bottom: 0.15rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4375rem;
+  height: 1.4375rem;
+  background: local;
   border-radius: 50px;
-  outline: none;
+  color: #909090;
   border: none;
-  border: 2px solid rgba(255, 255, 255, 1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .icon2 {
-  margin-top: 0.15rem;
-  margin-left: 0.2rem;
-  margin-bottom: 0.15rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4375rem;
+  height: 1.4375rem;
   border-radius: 50px;
-  outline: none;
   border: none;
   color: white;
   background-color: #0161FF;
   border: 2px solid rgba(255, 255, 255, 1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .chart {
@@ -201,6 +205,7 @@
 
 
 
+
 .faq {
   margin: 1rem 0rem;
   padding: 1rem;
@@ -213,7 +218,10 @@
   -webkit-backdrop-filter: blur(30px);
 }
 
-.relatedCalcultor {
+.relatedCalculators {
   margin: 1rem 0rem;
   opacity: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
