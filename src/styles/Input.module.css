@@ -1,0 +1,23 @@
+.input {
+    font-size: large;
+    width: 8rem;
+    background: none;
+    background-color: rgba(209, 227, 255, 0.39);
+    border-radius: 6.25rem;
+    border: 2px solid #9BB0D3;
+    color: black;
+    outline: none;
+    padding: 0.5rem 0rem;
+    margin: 0.2rem;
+    text-align: center;
+}
+
+.inputBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: space-between;
+    padding: 0.2em 0.2em 0.2em 0.3em;
+    margin: 0.5rem 0;
+}
