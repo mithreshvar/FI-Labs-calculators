@@ -20,10 +20,40 @@ export default function Chart({ points }) {
             title: {
                 text: "Years",
             },
+            // tickInterval: 2,
+            labels: {
+                step: 1
+            },
+            gridLineWidth: 1,
+            gridZIndex: 2,
         },
 
         yAxis: {
             enabled: false,
+            title: {
+                text: "",
+            },
+            labels: {
+                enabled: false,
+            },
+            gridLineColor: 'white',
+        },
+
+        plotOptions: {
+            series: {
+                pointStart: 2023,
+                fillColor: {
+                    linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                    stops: [
+                        [0, 'rgba(0, 221, 111, 0.65)'],
+                        [1, 'rgba(204, 255, 230,0.2)']
+                    ]
+                }
+            },
+            areaspline: {
+                color: '#00DD6F',
+            },
+
         },
 
         tooltip: {
@@ -45,7 +75,7 @@ export default function Chart({ points }) {
         series: [
             {
                 name: 'CAGR',
-                data: [100000, 125890, 158482.921, 199514.1492469, 251168.36248692241, 316195.85153478663, 398058.9574971429, 501116.42159315315, 630855.4631436205, 794183.9425515039],
+                data: null,
             }
         ],
 

@@ -23,7 +23,7 @@ export default function Home() {
   const [output, setOutput] = useState(25.89);
 
   const [isLineChart, setCheck] = useState(true);
-  const [graphPoints, setGraphPoints] = useState([100000, 125890, 158482.921, 199514.1492469, 251168.36248692241, 316195.85153478663, 398058.9574971429, 501116.42159315315, 630855.4631436205, 794183.9425515039]);
+  const [graphPoints, setGraphPoints] = useState([100000, 125890, 158482.921, 199514.1492469, 251168.36248692241, 316195.85153478663, 398058.9574971429, 501116.42159315315, 630855.4631436205, 794183.9425515039, 1000000]);
 
 
   function calculate() {
@@ -50,12 +50,21 @@ export default function Home() {
 
 
 
+  // useEffect(() => {
+  //   window.addEventListener('resize', () => {
+  //     console.log(window.innerHeight, window.innerWidth)
+  //   })
+  // }, [])
+
+
+
 
   return (
     <>
       <Head>
         <title>CAGR calculator</title>
         <link rel="icon" href='./logo.png' />
+        <link href="/dist/output.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" as="font" data-href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&amp;family=Rubik:wght@400;500;600&amp;display=swap" />
@@ -127,10 +136,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles.output_box}>
-                {/*CARG output*/}
-                <div id="CAGR_output">CAGR {(output === '-') ? output : `is ${output}%`}</div>
-              </div>
             </div>
 
             {/* vertical line */}
@@ -146,6 +151,11 @@ export default function Home() {
 
               <div className={styles.chart}>
                 {isLineChart ? <LineChart points={graphPoints} /> : <DoughnutChart initialInvestment={initialAmount} finalInvestment={finalAmount} dependency={output} />}
+              </div>
+
+              <div className={styles.output_box}>
+                {/*CARG output*/}
+                <div id="CAGR_output">CAGR {(output === '-') ? output : `is ${output}%`}</div>
               </div>
 
             </div>
@@ -185,7 +195,7 @@ export default function Home() {
 
           <CollapsibleBox
             heading={'How does the calculator work?'}
-            content={'It uses the following logic'}
+            content={<><div>It uses the following logic</div><br /><Image src={'/CAGRformula.png'} width={200} height={150} /></>}
           />
 
           <CollapsibleBox
