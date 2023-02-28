@@ -195,7 +195,13 @@ export default function Home() {
 
           <CollapsibleBox
             heading={'How does the calculator work?'}
-            content={<><div>It uses the following logic</div><br /><Image src={'/CAGRformula.png'} width={200} height={150} /></>}
+            content={
+              <>
+                <div>It uses the following logic</div>
+                <br />
+                <Image src={'/CAGRformula.png'} width={200} height={150} />
+              </>
+            }
           />
 
           <CollapsibleBox

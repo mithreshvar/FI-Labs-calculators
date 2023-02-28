@@ -2,7 +2,14 @@ import styles from '@/styles/Input.module.css'
 export default function Input({ id, type = '', min = 0, max, step = 1, value, setValue }) {
 
     const handleValue = (event) => {
-        if (!(isNaN(event.target.value)) && event.target.value.charAt(0) != '-') {
+
+        if (event.target.value.charAt(0) == '\u20B9') {
+            event.target.value = event.target.value.slice(1);
+        }
+
+        event.target.value = Number(event.target.value.replace(/,/g, ''));
+        //console.log(event.target.value)
+        if (!(isNaN(event.target.value)) && event.target.value > 0 && event.target.value <= max) {
             if (event.target.value == "") {
                 setValue(0);
             }
